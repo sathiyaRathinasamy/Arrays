@@ -8,10 +8,6 @@ public class Secondsmallest {
 		
 		int n=arr.length;
 		int first=Integer.MAX_VALUE,second=Integer.MAX_VALUE,i;
-		if(n<2)
-		{
-			System.out.println("Array contains only one element");
-		}
 		for(i=0;i<n;i++)
 		{
 			if(arr[i]<first)
@@ -19,7 +15,7 @@ public class Secondsmallest {
 				second=first;
 				first=arr[i];
 			}
-			else if(arr[i]<second||arr[i]!=first)
+			else if(arr[i]<second&&arr[i]!=first)
 			{
 				second=arr[i];
 			}
@@ -32,6 +28,7 @@ public class Secondsmallest {
 		if(second==Integer.MAX_VALUE)
 		{
 			System.out.println("All elements in the array are equal, There is no second smallest");
+			return 0;
 		}
 		return second;
 	}
@@ -44,6 +41,11 @@ public class Secondsmallest {
 		for(i=0;i<n;i++)
 		{
 			arr[i]=sc.nextInt();
+		}
+		if(n<2)
+		{
+			System.out.println("Array contains only one element");
+			return;
 		}
 		int smallest=secondsmallest(arr);
 		System.out.print(smallest);
