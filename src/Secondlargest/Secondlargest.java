@@ -18,7 +18,7 @@ public class Secondlargest {
 	    		second=first;
 	    		first=arr[i];
 	    	}
-	    	else if(arr[i]>second||arr[i]!=first)
+	    	else if(arr[i]>second&&arr[i]!=first)
 	    	{
 	    		second=arr[i];
 	    	}
