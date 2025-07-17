@@ -1,26 +1,29 @@
 package Frequency;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Frequencyofelement {
 
-	public static int[] Frequencyofelement(int[] arr) {
+	public static void frequencyOfElement(int[] arr) {
 		int n=arr.length;
-		int i,j,count;
-		for(i=0;i<n;i++)
-		{
-			count=0;
-			for(j=0;j<n;j++)
-			{
-				if(arr[i]==arr[j])
-				{
-					count++;
-				
-					
-				}
-			}
-			return(arr[i]+"-->"+count);
-		}
+		Set<Integer> s1=new TreeSet<>();
+        for(int i:arr)
+        {
+        	s1.add(i);
+        }
+        for(int i:s1)
+        {
+        	int count=0;
+        	for(int j:arr)
+        	{
+        		if(i==j)
+        		{
+        			count++;
+        		}
+        	}
+        	System.out.println(i+"---->"+count);
+        }
+		
 	}
 
 	public static void main(String[] args) {
@@ -32,9 +35,7 @@ public class Frequencyofelement {
 		{
 			arr[i]=sc.nextInt();
 		}
-		Frequencyofelement(arr);
-		
-
+		frequencyOfElement(arr);
 	}
-
+		
 }
